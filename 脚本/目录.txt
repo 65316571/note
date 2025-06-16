@@ -1,0 +1,9 @@
+git-weekly-pull.ps1		获取最新的weekly项目
+NacosStart.bat			快速启动Nacos
+NginxShutdown.bat		结束Nginx
+NginxStart.bat			开启Nginx
+RedisStart.bat			开启Redis
+
+
+快速git命令.md			常用的Git命令
+批量修改文件名 文件夹名称+文件名.cmd	

@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "8cdbdeae423c24aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "6503c5d33a9508bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1ca53bd930cd836",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "53ea7397519bbf08",
+    "type": "split",
+    "children": [
+      {
+        "id": "ac950cc4442e9bab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e4387e1d8c15ff8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "72f2ff458cb130e9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "fc7a68823c502847",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5374488489f5da57",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1dea77a958c7356",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "551c7a1cbe0c6975",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "c7a0abdcf9ff62c0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "cff1d995b9635abc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "4408886b6b119c8c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "未命名.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "未命名 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b1ca53bd930cd836",
+  "lastOpenFiles": [
+    "软件安装/WindowsService安装oracle教程.md",
+    "软件安装/oracle安装教程.md",
+    "软件安装",
+    "未命名",
+    "AI/提示词/gpt常用prompt.md",
+    "AI/提示词",
+    "AI/未命名",
+    "AI",
+    "面试题/核心面试题.md",
+    "面试题",
+    "API/常用API.md",
+    "API",
+    "Python/常见python包介绍文档.md",
+    "Python",
+    "Linux/常用Liunx代码.md",
+    "Linux",
+    "常用Liunx代码.md",
+    "2025-05-06.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "Docker/Docker介绍.md",
+    "Docker/Docker工具选择.md",
+    "Docker/docker常用命令.md",
+    "欢迎.md",
+    "Docker"
+  ]
+}

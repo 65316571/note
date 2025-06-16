@@ -1,0 +1,103 @@
+JDK1.8 自带方法：
+
+【赋值数组】
+用于赋值到另一个数组之中
+int [] a{1,2,3};
+int [] b=new int[a.length]
+System.arraycopy(a, 0, b, 0,a.length);
+
+
+1、Arrays类（数组操作）
+【排序方法】
+如果字符串进行排序将首字母进入排序
+
+Arrays.sort(数组名)
+	-Arrays.sort(p);
+	将p数组内的数据开始进行排序	
+		
+Arrays.sort(数组名，起始下标，终止下标)
+	-Arrays.sort(p,0,p.length);
+	选择特定的下标开始进入排序
+
+【查找方法】
+Arrays.binarySearch(p,寻找值)
+	-Arrays.binarySearch(p,'a');
+	返回值为-1或1(1为找到，-1为没有找到)
+
+【Arrays类的其他方法】
+	-sort()：给数据进行排序
+		Arrays.sort(p);
+	
+	-binarySearch()：在排好序的array中寻找元素
+		Arrays.binarySearch(p,'a');
+		
+	-Arrays.asList(p):将数组p转化为List
+		将数组转化成List集合的方法
+		用此方法得到的List的长度是不可改变的，
+		只适用于对象型数据的数组（String、Integer...）
+		Arrays.asList(p);
+		
+	-equals()：比较两个array是否相等(所有对应元素两两相等)
+        Arrays.equals(p1,p2);
+	
+	-int []m=copyOfRange():将数组n的0~5下标赋值给数组m,没有此元素则默认为0
+		Arrays.copyOfRange(n, 0, 5)；
+	
+2、Comparator接口
+【比较器】
+比较参数顺序， 就是在排序时使用
+Collections.sort()
+用于排序集合的数据
+
+3、StringBuilder类
+【可调节的字符串类型】
+
+StringBuilder转换成String
+	-String s = sb.toString();
+
+4、Integer类
+【10进制快速转换】
+
+将任意进制转换成10进制
+	-Integer.parseInt("10",16);
+	
+5、 String类
+lastIndexOf（）方法
+可以用搜索最后一个检索值的下标
+可以用于两个相同数之间的距离
+
+
+【常用代码】：
+注解：
+@WebServlet("/地址名")
+	-用于将一个类声明为 Servlet
+作用：声明Servlet
+
+代码行：
+resp.setContentType("text/html;charset=utf-8");    
+	-将显示出的编码转成"utf-8"格式	
+作用：设置响应编码方式
+
+
+常用代码：
+		
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+		
+        if (s.length() > 0) {
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                //如果map中没有此字符，则次数置为1
+                if (!hashMap.containsKey(c)) {
+                    hashMap.put(c, 1);
+                } else {
+                    //如果map中有此字符，则次数增1
+                    Integer temNum = hashMap.get(c);
+                    temNum++;
+                    hashMap.put(c, temNum);
+                }
+            }
+            System.out.println(hashMap);
+        } else {
+            System.out.println("给定字符串中没有字符");
+        }
+ 

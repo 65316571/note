@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"99e36e34aeeea9b3","type":"text","text":"长风破浪会有时，\n直挂云帆济沧海。","x":-620,"y":590,"width":218,"height":80},
+		{"id":"e29e0e131d2dfc10","type":"text","text":"你想要活出怎样的人生？","x":-1080,"y":197,"width":280,"height":60},
+		{"id":"333da426acfc451c","type":"text","text":"知识","x":-246,"y":600,"width":250,"height":60},
+		{"id":"08153eabb5ce8889","type":"text","text":"今朝有酒今朝醉，\n明日愁来明日愁。","x":-618,"y":-150,"width":218,"height":80},
+		{"id":"a28455e2a2b0d6f3","type":"text","text":"财富","x":-246,"y":850,"width":250,"height":60},
+		{"id":"261ba53866c2f808","type":"text","text":"身体健康","x":140,"y":257,"width":250,"height":60},
+		{"id":"2eb2b4f0b7f41d81","type":"text","text":"心理健康","x":140,"y":424,"width":250,"height":60},
+		{"id":"a70ca87ccb064b22","type":"text","text":"专业知识","x":140,"y":524,"width":250,"height":60},
+		{"id":"7c9240dfab95857b","type":"text","text":"生活知识","x":140,"y":670,"width":250,"height":60},
+		{"id":"59229dd7ff7fc43f","type":"text","text":"副业","x":126,"y":803,"width":250,"height":60},
+		{"id":"94dfb66a9bc73f07","type":"text","text":"理财","x":126,"y":910,"width":250,"height":60},
+		{"id":"69c08605e5f61e83","type":"text","text":"健康","x":-246,"y":364,"width":250,"height":60},
+		{"id":"259bcd96b6ba2b00","type":"text","text":"快乐","x":-246,"y":-140,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"65604cb0ab75bb4d","fromNode":"e29e0e131d2dfc10","fromSide":"right","toNode":"08153eabb5ce8889","toSide":"left"},
+		{"id":"1d62842ee06ddea1","fromNode":"e29e0e131d2dfc10","fromSide":"right","toNode":"99e36e34aeeea9b3","toSide":"left"},
+		{"id":"306d358f3a55abd3","fromNode":"99e36e34aeeea9b3","fromSide":"right","toNode":"333da426acfc451c","toSide":"left"},
+		{"id":"7036aafb3c6d36a1","fromNode":"99e36e34aeeea9b3","fromSide":"right","toNode":"69c08605e5f61e83","toSide":"left"},
+		{"id":"de5a6831143b7a3a","fromNode":"99e36e34aeeea9b3","fromSide":"right","toNode":"a28455e2a2b0d6f3","toSide":"left"},
+		{"id":"60433e4b10c7c90e","fromNode":"69c08605e5f61e83","fromSide":"right","toNode":"261ba53866c2f808","toSide":"left"},
+		{"id":"11f141f9296b178e","fromNode":"69c08605e5f61e83","fromSide":"right","toNode":"2eb2b4f0b7f41d81","toSide":"left"},
+		{"id":"c16901783761ebe5","fromNode":"333da426acfc451c","fromSide":"right","toNode":"a70ca87ccb064b22","toSide":"left"},
+		{"id":"9b543a9b3065c388","fromNode":"333da426acfc451c","fromSide":"right","toNode":"7c9240dfab95857b","toSide":"left"},
+		{"id":"646e22ac3e9355b3","fromNode":"a28455e2a2b0d6f3","fromSide":"right","toNode":"59229dd7ff7fc43f","toSide":"left"},
+		{"id":"d9409d91d60e71d9","fromNode":"a28455e2a2b0d6f3","fromSide":"right","toNode":"94dfb66a9bc73f07","toSide":"left"},
+		{"id":"7740db9041456ad7","fromNode":"08153eabb5ce8889","fromSide":"right","toNode":"259bcd96b6ba2b00","toSide":"left"}
+	]
+}

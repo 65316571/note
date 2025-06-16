@@ -1,0 +1,625 @@
+常用命令：
+新建的方法
+create table 表名（
+字段名 类型
+... );
+插入的方法：
+insert into 表名 (字段)
+values (数据)
+
+删除数据的方法：
+delete from 表名
+where 字段名（在哪一个字段中） = 数据（需删除的数据）
+
+where 
+可以添加：=,<,>等符号来判断
+也可以添加 AND(和)或是OR(或者)作为来约束条件
+
+SQL关键字：
+create 创建
+database 数据库
+table 数据表
+drop 删除表（库）
+desc 查字段
+insert into 插入
+values 值
+where 条件
+delete 删除（字段）
+from 从...表开始
+select 查询
+update 更新
+view 视图
+as 作为
+references 参考
+primary key 设置主键
+foreign key 设置外键
+check(表名 in (约束条件) 设置约束
+
+实例代码 实例演示的功能为：增删改查：
+(注下列代码中： 
+数据库名称用mysql表示
+数据表名称用sql表示
+字段名：one,two,three
+字段类型：i,c,d 分别对应 int,varchar(10),double 类型
+)
+
+创建数据库：
+create database mysql
+
+删除数据库：
+drop database mysql
+
+查询数据库:
+show databases
+
+切换数据库:
+use sql
+
+创建数据表:
+create table sql（one int,two varchar(10））；
+
+删除数据表：
+drop table sql
+
+查询数据表：
+show tables
+
+查询字段信息
+desc 表名
+
+查看表的关系
+show columns from 表名
+
+查询sql数据表所有信息:
+select * from sql
+
+查询sql数据表字段为two的内容为'二'的信息 并取别名为汉字：
+select two '汉字'
+from sql
+where two='二'
+
+插入数据：
+insert into sql(one,two,three)
+values (1,'二',3.3)
+
+删除数据:
+delete from sql 
+where two='一'
+
+更新把one为1中的 字段two的数据改成'三':
+update sql
+set two='三'
+where one=1
+
+联合主键创建：
+primary key (id,name);
+
+创建关系表：
+create table 表名(
+id char(3),
+name char(3),
+primary key (id,name);
+foreign key (本表字段) references 连接表名 (连接表字段)
+);
+
+
+按照【名字】小到大的顺序来排序	=》升序
+ORDER BY name ASC;	order by 
+按照【名字】大到小的顺序来排序 =》倒序
+ORDER BY name DESC;
+
+Insert Into 表名 values（值）
+insert into T1 values（a,b,c）
+全部字段插入数据
+
+Insert Into 表名（字段名1，字段名2…） values（值distinct
+insert into T1（name,id,sex） values（a,b,c）
+插入指定列插入数据
+
+create table if not exists one(
+#   if not exists = 如果不存在……就执行
+#   if exists = 如果存在……就执行
+    a varchar(10),
+#   字段名:a 字符型
+    b int auto_increment,
+#   字段名:b 整型 自增
+    c datetime unique,
+#   字段名:c 日期型 唯一约束
+    d double not null,
+#   字段名:d 浮点型 非空
+    primary key (b),
+#   设置联合主键——a&b
+    foreign key (c) references two(c)
+#   设置外键约束 外键需要有索引(这个表中c为two表的主键
+	logic int default 1
+#	设置默认值 默认值为 1
+)
+auto_increment、unique、not null、foreign key (c)、references two(c)、default
+自增，唯一，非空，外键约束、主键约束、默认值
+
+
+SQL中的条件表达式结构
+CASE 
+  WHEN 条件1 THEN 值1
+  WHEN 条件2 THEN 值2
+  ...
+  ELSE 默认值
+END
+
+示例1：按性别返回对应文字
+SELECT 
+  name,
+  gender,
+  CASE 
+    WHEN gender = 'M' THEN '男'
+    WHEN gender = 'F' THEN '女'
+    ELSE '未知'
+  END AS gender_text
+FROM employee;
+
+示例2：按部门计数
+SELECT 
+  name,
+  SUM(CASE WHEN department = 'departmentA' THEN 1 ELSE 0 END) AS departmentA,
+  SUM(CASE WHEN department = 'departmentB' THEN 1 ELSE 0 END) AS departmentB
+FROM employee
+GROUP BY name;
+
+示例3：分数转等级
+SELECT 
+  student_name,
+  score,
+  CASE 
+    WHEN score >= 90 THEN '优秀'
+    WHEN score >= 75 THEN '良好'
+    WHEN score >= 60 THEN '及格'
+    ELSE '不及格'
+  END AS 等级
+FROM exam;
+
+ALTER TABLE student ALTER logic SET DEFAULT 1;
+已经有拥有 表后 再设置默认值（给表名student设置默认值1
+
+update name set name='XX' where name='YY'
+更新数据
+
+delete from T1
+删除数据
+
+drop table T1;
+删除数据表
+
+CONCAT(s1,s2,'x')	concat
+拼接函数
+参数为拼接的参数，返回值为：合并值
+
+ROUND(double,0)	round
+取舍函数
+返回小数位为0，接收值：3.14	，返回值：3
+
+AUTO_INCREMENT	auto_increment
+自动增长
+
+模糊查询
+select * from Student where name like '%浩%';
+
+select * from student where name in('张浩','李浩')
+
+正常查询：
+select * from student where name='王浩';
+
+ALL()	all
+全部
+
+MAX()	max
+最大（在字母中从Z~A）
+
+MIN()	min
+最小（在字母中从A~Z）
+
+IN	in
+多个之中
+
+NOT IN	not in
+多个之中 取反
+
+DISTINCT	distinct
+去重（清除重复数据）
+
+COUNT	count
+计数
+
+GROUP BY 	group by
+通过...	
+（去重复）
+
+HAVING	having 
+过滤分组
+
+AS	as
+取别名
+
+表1 JOIN 表2 ON(外键=外键)
+内部表
+
+LEFT JOIN 	left join
+左连接（是返回左表 行及 右表中符合条件的行）
+
+RIGHT JOIN	right join
+右连接  (是返回右表 行及 左表中符合条件的行)
+
+FULL JOIN	full join
+全连接（返回左表中所有的行及右表中所有的行）
+
+COALESCE(字段名,合并值)	coalesce
+判断选中的字段名，判断是不是NULL值
+yes （非NULL）打印判断值
+no（为NULL） 打印合并值
+
+UPPER(str)	upper
+将字符串中所有字符转为大写
+
+LOWER(str)	lower
+将字符串中所有字符转为小写
+
+LENGTH(str)	length
+获取字符串长度
+
+LEFT(str,1)	left
+从左边截取字符
+获取str字符串中第一个
+
+RIGHT(str,lenght(str)-1)	right
+获取str字符串除第一个的全部
+从右边截取字符
+
+COUNT(DISTINCT str)
+用来统计 非重复的str数据
+ 
+GROUP_CONCAT()	group_concat	
+先根据group by指定的列进行分组
+将同一组的列显示出来，并且用分隔符分隔
+可以使用：去重，排序，符号分隔
+（默认正序，','分隔）
+
+用例展示：
+SELECT GROUP_CONCAT(
+DISTINCT product 		#去除重复值 
+ORDER BY product ASC    #按照字典序排列，升序
+SEPARATOR ',')          #用','分隔
+
+REGEXP	regexp
+使用正则表达式判断
+
+comment
+关键字后面用单引号括起来的就是你需要给这个字段添加的注释。
+create table student(
+  s_no int not null comment '学号',
+  s_name varchar(100) comment '姓名'
+);
+
+添加后如何查看自己的注释
+show full columns from 表名;
+
+ 
+
+UNION	union
+操作符用于合并两个或多个 SELECT 语句的结果
+前置条件；
+	——UNION 内部的 SELECT 语句必须拥有相同数量的列。
+	——列也必须拥有相似的数据类型。
+	——每条 SELECT 语句中的列的顺序必须相同。
+
+IFNULL	ifnull
+它接受两个参数，如果不是NULL，则返回第一个参数。
+否则，IFNULL函数返回第二个参数
+
+DATEDIFF datediff
+获取相差的天数
+得到的结果是日期1与日期2相差的天数
+如果日期1比日期2大，结果为正；
+如果日期1比日期2小，结果为负。
+
+LIMIT  limit
+限制select查询的行数
+SELECT * FROM table_name 
+WHERE id = 'value' LIMIT 1; 
+
+OFFSET offset
+limit后面只能有一个参数，表示要取的的数量,offset表示要跳过的数量。
+select * from 
+article LIMIT 3 OFFSET 1 
+表示跳过1条数据,从第2条数据开始取，取3条数据，也就是取2,3,4三条数据
+
+BETWEEN...AND	 ……and
+会选取介于两个值之间的数据范围
+这些值可以是数值、文本或者日期。
+
+IIF()	iff
+判断或评估第一个参数，
+如果第一个参数为真，则返回第二个参数
+类似于if—else
+
+COALESCE() 	coalesce
+传入两个参数，参数判断是否为空，否则返回第二个数据
+例子：
+select coalesce(success_cnt, 1) from tableA
+当success_cnt 为null值的时候，将返回1，否则将返回success_cnt的真实值
+
+ROUND() round
+用于把数值字段舍入为指定的小数位数。
+可以用于四舍五入
+例子：
+SELECT ROUND(column_name,decimals) FROM table_name
+其中：
+column_name	要舍入的字段
+decimals	规定要返回的小数位数
+
+dense_rank()  DENSE_RANK()
+从序号从1到n连续排序，如果有两个人都排在第3名，则下一名还是第4名
+dense_rank() OVER(partition by 列名 order by列名) 
+partition: 需要分区的列（可不使用）——能够在保留全部数据的基础上，只对其中某些字段做分组排序（与GROUP BY类似）
+order bye: 对分区内排序
+
+DENSE_RANK () OVER ()
+此函数返回结果集分区中每行的排名，排名值没有间断,
+特定行的排名等于该特定行之前不同排名值的数量加一。 
+
+row_number() over(partition by col1 order by col2)	
+相等的值对应的排名相同，序号从1到n连续
+
+rank() over(partition by col1 order by col2)	
+但若有并列的名称，会占用下一名次的，则序号从1到n不连续。如果有两个人都排在第3名，则没有第4名
+
+CASE WHEN函数
+语法：CASE SCORE WHEN 'A' THEN '优' ELSE '不及格' END
+含义：SCORE中有'A'就返回'优'，否则返回'不及格' 
+
+使用场景：有分数score，score<60返回不及格，score>=60返回及格，score>=80返回优秀
+SELECT
+    STUDENT_NAME,
+    (CASE WHEN score < 60 THEN '不及格'
+    WHEN score >= 60 AND score < 80 THEN '及格'
+    WHEN score >= 80 THEN '优秀'
+    ELSE '异常' END) AS REMARK
+FROM TABLE
+case 字段名 when 字段值 then if 比较结果 
+…… end 结束 
+
+
+null和（空）
+定义的区别：
+null表示输出为null 空表示表格没有任何输出，
+
+1、判断是否是null使用
+xx is null
+xx not is null
+
+2、null的产生
+聚合函数（sum，avg，max，min等）
+
+在虚拟表中查询的数据（且虚拟表的数据不存在）
+SELECT num FROM(虚拟表)——>返回（空）
+SELECT FROM(虚拟表)——>返回null
+
+WITH AS函数 with as
+把需要频繁执行的slq片段加个别名放到全局中，后面直接调用就可以，这样减少调用次数，优化执行效率。
+例子；
+with as (
+select  *  from user ) A
+select *   from student  customer where  customer.userid = a.user.id
+这个sql语句的意思是：先执行select * from user把结果放到一个临时表A中，作为全局使用。
+
+
+什么是视图？
+在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。
+视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。
+我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表。
+注释：数据库的设计和结构不会受到视图中的函数、where 或 join 语句的影响。
+
+SQL CREATE VIEW 语法
+CREATE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+
+
+
+什么是存储过程？
+存储过程是一个可以保存的准备好的SQL代码，因此代码可以反复使用。
+因此，如果您有一个反复编写的SQL查询，请将其保存为存储过程，然后调用它来执行它。
+还可以将参数传递给存储过程，以便存储过程可以根据传递的参数值进行操作。
+
+-- 创建一个存储过程，参数为in
+create procedure test(in i int)
+begin
+	select i; -- 返回结果i,i=1
+	set i=2;
+	select i; -- 返回结果i,i=2
+end
+带参数的存储过程
+
+
+-- 调用存储过程test，并传入一个参数i=1
+set @i = 1; -- 定义全局变量i
+call test(@i);
+select @i; -- 返回结果i,i=1
+
+存储过程的重点：
+in 	i int   ->定义参数i 类型为int
+call test(@i)   ->调用名字为test的存储过程	
+set @i=??	->给参数赋值??值 
+在外面使用定义的参数i时	需要加上@符号，否则会不认识
+drop procedure test ->删除test的存储过程
+
+更多存储过程可以查询：https://blog.csdn.net/baishuiniyaonulia/article/details/105378977
+
+条件聚合:
+SUM(CASE WHEN ... THEN 1 ELSE 0 END) 是 SQL 里非常经典的「条件聚合」写法
+它的设计思想是：通过条件判断转化为 0 或 1，然后使用聚合函数 SUM 来实现按条件计数。
+
+新增字段名:
+alter table 表名 add column 字段名
+删除字段名:
+alter table 表名 modify column 字段名
+修改字段名:
+alter table 表名 rename column 字段名 to 新字段名;
+
+物理删除：从数据库直接移除。
+逻辑删除：在数据库中没有被移除，而是通过一个变量让它失效!
+(deletefiag=-1 ==> deletefiag=1。
+作用：管理员可以查看被删除的记录！以防数据丢失
+
+逻辑删除使用：
+在数据库中顶一个deletefiag字段（int类型）	
+"删除"就变成"更新"
+update table
+ set deletefiag=-1 
+ where id=Y 
+deletefiag =-1则为放入"回收站" 无法显示。
+
+在MybatisPlus中
+设置逻辑删除：
+在pojo包中，定义 类型：int	 属性名：deletefiag
+@TableLogic（逻辑删除注解）
+int deletefiag
+
+
+更新时间与删除时间：
+建立数据表中（创建时间与更新时间字段）：
+createTime datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+updateTime datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+
+乐观锁：
+version int not null COMMENT '乐观锁' default 1
+在建立数据库中，如果有多并发的情况，可以设置字段version（版本）默认值为:1
+在每次进行查询，更新后version会自动+1
+
+主键约束：
+建立数据表时
+主键最好设计成没有任何含义的字
+（有意义就会导致与外键关联时容易发生更改）
+
+
+1.主键约束
+添加:alter table table_name add primary key (字段)
+删除:alter table table_name drop primary key
+
+2.非空约束
+添加:alter table table_name modify 列名 数据类型 not null
+删除:alter table table_name modify 列名 数据类型 null
+
+3.唯一约束
+添加:alter table table_name add unique 约束名(字段)
+删除:alter table table_name drop key 约束名
+
+4.自动增长
+添加:alter table table_name modify 列名 int auto_increment
+删除:alter table table_name modify 列名 int
+
+5.外键约束
+添加:alter table table_name add constraint 约束名 foreign key(外键列)
+references 主键表(主键列)
+
+删除:
+第一步:删除外键
+alter table table_name drop foreign key 约束名
+第二步:删除索引
+alter table table_name drop index 索引名
+[^1]:
+约束名和索引名一样
+
+6.默认值
+添加:alter table table_name alter 列名 set default '值'
+删除:alter table table_name alter 列名 drop default
+
+彻底理解：内连接、左连接、右连接、笛卡尔链接：
+假设我们有两个表：Students（学生）和 Courses（课程），它们之间存在关联关系。下面是两个表的示例数据：
+
+Students（学生）表
+
+StudentID	Name
+1	Alice
+2	Bob
+3	Charlie
+4	David
+Courses（课程）表
+
+CourseID	CourseName
+101	Math
+102	Science
+103	History
+现在我们来演示不同类型的连接：
+
+内连接（Inner Join）：内连接会返回两个表中共有的记录。在学生和课程的例子中，内连接将返回同时在学生表和课程表中存在的学生和课程的组合。
+sql
+Copy code
+SELECT Students.Name, Courses.CourseName
+FROM Students
+INNER JOIN Courses ON Students.StudentID = Courses.CourseID;
+结果：
+
+Name	CourseName
+Alice	Math
+Bob	Science
+Charlie	History
+左连接（Left Join）：左连接会返回左表中的所有记录，以及右表中与左表匹配的记录。在学生和课程的例子中，左连接将返回所有学生以及他们匹配到的课程，如果有的话。
+sql
+Copy code
+SELECT Students.Name, Courses.CourseName
+FROM Students
+LEFT JOIN Courses ON Students.StudentID = Courses.CourseID;
+结果：
+
+Name	CourseName
+Alice	Math
+Bob	Science
+Charlie	History
+David	NULL
+右连接（Right Join）：右连接会返回右表中的所有记录，以及左表中与右表匹配的记录。在学生和课程的例子中，右连接将返回所有课程以及匹配到的学生，如果有的话。
+sql
+Copy code
+SELECT Students.Name, Courses.CourseName
+FROM Students
+RIGHT JOIN Courses ON Students.StudentID = Courses.CourseID;
+结果：
+
+Name	CourseName
+Alice	Math
+Bob	Science
+Charlie	History
+NULL	NULL
+笛卡尔连接（Cartesian Join）：笛卡尔连接会返回两个表的所有可能组合。在学生和课程的例子中，笛卡尔连接将返回每个学生与每门课程的组合。
+sql
+Copy code
+SELECT Students.Name, Courses.CourseName
+FROM Students, Courses;
+结果：
+
+Name	CourseName
+Alice	Math
+Alice	Science
+Alice	History
+Bob	Math
+Bob	Science
+Bob	History
+Charlie	Math
+Charlie	Science
+Charlie	History
+David	Math
+David	Science
+David	History
+通过上述例子，您可以清楚地看到不同类型连接的区别：内连接只返回匹配的记录，左连接返回左表中的所有记录并匹配右表，右连接返回右表中的所有记录并匹配左表，而笛卡尔连接返回两个表的所有可能组合。
+
+SQL常用题目：
+
+1、求最晚入职员工：
+select * from employees
+where hire_date = (select max(hire_date) from employees )
+#思路：子查询的到最晚的员工时间，再通过条件查询。
+
+select * from employees
+order by hire_date desc limit 1;
+#思路：使用排序（倒叙），再通过limit只获取第一个值。
+
+2、

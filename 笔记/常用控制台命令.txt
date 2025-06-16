@@ -1,0 +1,28 @@
+.. 返回上级目录
+cd 跳转
+dir	显示
+cls 清屏
+exit 关闭
+
+
+netstat -ano | findstr "8080" 查询8080端口是哪个进程
+tasklist | findstr "1234"   查看进程信息
+taskkill /F /PID 1234       关闭对应端口进程
+
+
+ipconfig 查本地ip地址				ipconfig -all	全部网络配置
+netstat -ano 查本地端口占用情况
+localhost 主机
+
+type 驱动器：\文件夹\文件名		读取文本内容
+
+copy 复制	copy + 源文件名 + 目标文件名
+md	创建目录（只能创建文件夹）
+rd	删除目录（只能为非空文件夹）	rd /s/q 文件名 可以直接删除所有文件夹及文件
+del	删除输入的文件（记得加后缀名）
+echo> 创建文件（记得输入后缀名）
+
+设置开启自启动地址:
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+ 或者直接在【文件资源管理】的搜索栏 输入 Shell:StartUp

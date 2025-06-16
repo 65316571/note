@@ -1,0 +1,18 @@
+src
+web
+resources
+
+dao
+entity
+service
+controller
+
+mybiats
+mybiats_plus
+maven
+spring
+springMVC(model and view)
+spring-boot
+spring-cloud
+
+pattern('yyyy-MM-dd')
