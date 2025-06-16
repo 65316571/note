@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "生活/日记/6月/2025-06-16.md",
+                "file": "生活/周刊/Weekly-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-06-16"
+              "title": "Weekly-1"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "快速git命令"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,8 +88,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -211,7 +209,7 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "573bc253792c449a",
+  "active": "79c73cf219318c4b",
   "lastOpenFiles": [
     "生活/日记/6月/2025-06-16.md",
     "脚本/快速git命令.md",
