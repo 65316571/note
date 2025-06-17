@@ -1,15 +1,15 @@
 ---
-title: '几百个好玩的docker项目，持续更新中……'
-category: '/小书匠/收集/知乎问答/二冰/a62e934e37196b2771eb9c42887de6c9'
-slug: 'https://zhuanlan.zhihu.com/p/1892575313462027601'
-createDate: '2025-4-7 16:34:59'
+title: 几百个好玩的docker项目，持续更新中……
+category: /小书匠/收集/知乎问答/二冰/a62e934e37196b2771eb9c42887de6c9
+slug: https://zhuanlan.zhihu.com/p/1892575313462027601
+createDate: 2025-4-7 16:34:59
 grammar_mathjax: false
 grammar_footnote: false
 grammar_ins: false
-cover: '![cover](images/xsjCover.jpg)'
-emoji: '二'
-tags: 'Docker'
-
+cover: "![cover](images/xsjCover.jpg)"
+emoji: 二
+tags:
+  - Docker
 ---
 
 
